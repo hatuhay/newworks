@@ -1,0 +1,10 @@
+uuid: 02befb97-6635-4b34-8b72-9563181bcaba
+langcode: en
+status: true
+dependencies: {  }
+id: full_width_paragraph_container
+label: 'Full width paragraph container'
+icon_uuid: null
+icon_default: null
+description: 'WRAPPER - Background color will width screen, child paragraph inside container'
+behavior_plugins: {  }

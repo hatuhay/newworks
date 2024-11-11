@@ -1,0 +1,10 @@
+uuid: 4c261e40-aabe-4a5a-8682-440ffd8e6be4
+langcode: en
+status: true
+dependencies: {  }
+id: views
+label: Views
+icon_uuid: null
+icon_default: null
+description: 'Insert a view on paragraph bundle'
+behavior_plugins: {  }

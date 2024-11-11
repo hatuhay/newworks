@@ -1,0 +1,44 @@
+uuid: e924d9dc-3c73-4000-80b9-58a66ce5638d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_views
+    - paragraphs.paragraphs_type.views
+  module:
+    - viewsreference
+id: paragraph.views.field_views
+field_name: field_views
+entity_type: paragraph
+bundle: views
+label: Views
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+    embed: embed
+  preselect_views:
+    agenda_eventos: agenda_eventos
+    noticias_destacadas: noticias_destacadas
+    noticias_destacadas_culturales: noticias_destacadas_culturales
+    noticias_destacadas_deportes: noticias_destacadas_deportes
+    noticias_destacadas_estilo_regatas: noticias_destacadas_estilo_regatas
+    noticias_destacadas_relacionadas: noticias_destacadas_relacionadas
+    ultimas_noticias: ultimas_noticias
+    ultimas_noticias_deportes: ultimas_noticias_deportes
+    ultimas_noticias_estilo_regatas: ultimas_noticias_estilo_regatas
+    ultimas_noticias_relacionadas: ultimas_noticias_relacionadas
+    ultimas_noticias_relacionadas_x_noticias: ultimas_noticias_relacionadas_x_noticias
+  enabled_settings:
+    limit: limit
+    title: title
+    pager: pager
+field_type: viewsreference

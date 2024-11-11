@@ -1,0 +1,10 @@
+uuid: c75d74db-bacc-4536-8537-1100261688be
+langcode: es
+status: true
+dependencies: {  }
+id: gallery
+label: 'Gallery'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

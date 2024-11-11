@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+ #}
+{% macro bytesToSize(bytes) %}
+    {% set kilobyte = 1024 %}
+    {% set megabyte = kilobyte * 1024 %}
+    {% set gigabyte = megabyte * 1024 %}
+    {% set terabyte = gigabyte * 1024 %}
+
+    {% if bytes < kilobyte %}
+        {{ bytes ~ ' B' }}
+    {% elseif bytes < megabyte %}
+        {{ (bytes / kilobyte)|number_format(2, '.') ~ ' Kb' }}
+    {% elseif bytes < gigabyte %}
+        {{ (bytes / megabyte)|number_format(2, '.') ~ ' Mb' }}
+    {% elseif bytes < terabyte %}
+        {{ (bytes / gigabyte)|number_format(2, '.') ~ ' Gb' }}
+    {% else %}
+        {{ (bytes / terabyte)|number_format(2, '.') ~ ' Tb' }}
+    {% endif %}
+{% endmacro %}
+{% set hide_title = true %}
+{% set pdf_url = file_url(media.field_media_document.entity.uri.value) %}
+{% set pdf_size = _self.bytesToSize(media.field_media_document.entity.filesize.value) %}
+{% set pdf_name = media.field_media_document.entity.filename.value %}
+{% set modifier_classes = '' %}
+
+<div{{attributes}} >
+  {{ include('crl:pdf', {
+      title: media.field_titulo_del_documento.0.value,
+      hide_title: hide_title,
+      pdf_url: pdf_url,
+      pdf_size: pdf_size,
+      pdf_name: pdf_name,
+      modifier_classes: modifier_classes,
+    })
+  }}
+</div>

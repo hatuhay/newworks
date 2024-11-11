@@ -1,0 +1,33 @@
+uuid: 0bff3801-8001-4fe9-838f-30d85de41cf5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_large
+field_name: field_layout_large
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: auto
+      label: Auto
+    -
+      value: 2_columns_equal
+      label: '2 Columns Equal'
+    -
+      value: 3_columns_equal
+      label: '3 Columns Equal'
+    -
+      value: 4_columns_equal
+      label: '4 Columns Equal'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

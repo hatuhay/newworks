@@ -1,0 +1,35 @@
+uuid: 0350bcbd-aab3-4310-bbd4-267a78803905
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_hero.field_background
+    - field.field.paragraph.home_hero.field_title
+    - paragraphs.paragraphs_type.home_hero
+  module:
+    - image
+id: paragraph.home_hero.default
+targetEntityType: paragraph
+bundle: home_hero
+mode: default
+content:
+  field_background:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

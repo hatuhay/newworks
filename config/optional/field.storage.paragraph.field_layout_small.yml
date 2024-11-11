@@ -1,0 +1,30 @@
+uuid: af7bd580-32ac-4723-be25-606978e5935a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_small
+field_name: field_layout_small
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: auto
+      label: Auto
+    -
+      value: 1_column
+      label: '1 Column'
+    -
+      value: 2_columns_equal
+      label: '2 Columns Equal'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

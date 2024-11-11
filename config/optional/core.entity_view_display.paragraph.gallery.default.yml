@@ -1,0 +1,21 @@
+uuid: be712de8-8db9-406d-9949-b2d3ef5227fd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery.field_image
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.default
+targetEntityType: paragraph
+bundle: gallery
+mode: default
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: galeria
+      link: false
+    weight: 0
+    region: content
+hidden: {  }

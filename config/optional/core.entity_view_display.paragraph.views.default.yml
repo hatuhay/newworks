@@ -1,0 +1,38 @@
+uuid: 90f9f746-9c75-4df9-a760-fd35c6b5f013
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.views.field_link
+    - field.field.paragraph.views.field_views
+    - paragraphs.paragraphs_type.views
+  module:
+    - link
+    - viewsreference
+id: paragraph.views.default
+targetEntityType: paragraph
+bundle: views
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_views:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

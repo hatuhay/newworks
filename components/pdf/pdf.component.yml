@@ -1,0 +1,30 @@
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    is_demo:
+      type: boolean
+      default: false
+    title:
+      type: string
+      default: Lorem Ipsum
+    hide_title:
+      type: boolean
+      default: false
+    pdf_url:
+      type: string
+      default: ""
+    pdf_size:
+      type: string
+      default: "540Kb"
+    pdf_name:
+      type: string
+      default: "this_is_test.pdf"
+    viewer_size:
+      type: string
+      default: 1
+libraryOverrides:
+  js:
+    ./pdfjs/build/pdf.min.js: {}
+    ./printjs/print.min.js: {}
+    pdf.js: {}

@@ -1,0 +1,21 @@
+uuid: 0463ca92-c4f4-43c1-9e66-4653a1b67882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_large
+    - paragraphs.paragraphs_type.row
+  module:
+    - options
+id: paragraph.row.field_layout_large
+field_name: field_layout_large
+entity_type: paragraph
+bundle: row
+label: 'Layout Large'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

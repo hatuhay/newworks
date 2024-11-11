@@ -1,0 +1,54 @@
+.pdf-top-bar {
+  background: #343a40;
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: var(--sticky-nav-height, 0px);
+  z-index: 10;
+}
+
+.pdf-bottom-bar {
+  background: #343a40;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.pdf-top-bar a,
+.pdf-top-bar a:visited {
+  color: white;
+}
+
+.pdf-top-bar a:hover {
+  color: var(--bs-gray-100);
+}
+.pdf-container {
+  margin-bottom: 2.75rem;
+}
+#pdf-wrapper {
+  direction: ltr;
+  background: #343a40;
+  padding: 0 1rem;
+}
+
+#pdf-wrapper canvas {
+  width: 100%;
+}
+
+#pdf-wrapper.small-viewer {
+  height: 350px;
+  overflow-y: auto;
+  z-index: 2;
+  position: sticky;
+}
+
+#pdf-wrapper.small-viewer .pdf-top-bar {
+  top: 0;
+}
+
+#pdf-pager svg {
+  font-size: 0.8rem;
+}
+
+#pdf-pager a {
+  text-decoration: none;
+}

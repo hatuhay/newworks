@@ -1,0 +1,24 @@
+uuid: 01485c0f-fb03-4b35-ab6f-9786048aafd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.full_width_paragraph_container
+  module:
+    - entity_reference_revisions
+id: paragraph.full_width_paragraph_container.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: full_width_paragraph_container
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 1
+  field_type: entity_reference_revisions

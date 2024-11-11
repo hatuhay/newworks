@@ -1,0 +1,37 @@
+uuid: dfe89363-2ea6-45cd-9970-8d3a83f1b067
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.views.field_link
+    - field.field.paragraph.views.field_views
+    - paragraphs.paragraphs_type.views
+  module:
+    - link
+    - viewsreference
+id: paragraph.views.default
+targetEntityType: paragraph
+bundle: views
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_views:
+    type: viewsreference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

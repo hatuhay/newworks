@@ -1,0 +1,37 @@
+
+{% if is_demo %}
+  {% set modifier_classes = 'full-viewer' %}
+{% endif %}
+
+{% set classes = [
+  'js-pdf',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+
+<div class="pdf-container">
+  {% if not hide_title %}
+  <h3 class="js-pdf__title">{{ title }}</h3>
+  {% endif %}
+  <div id="pdf-wrapper" class="{{ classes }}" data-pdf="{{ pdf_url }}" data-worker-url="/themes/custom/crl/components/pdf/pdfjs/build/pdf.worker.min.js">
+    <div class="pdf-top-bar d-flex justify-content-lg-between flex-column flex-lg-row">
+      <div>
+        <i class="fas fa-file-pdf"></i><a class="mx-1" id="print-pdf" href="{{ pdf_url }}" target="_blank">
+          {{ pdf_name }}
+        </a>({{pdf_size}})
+      </div>
+      <div id="pdf-pager">
+        <a class="usa-button btn page-left" id="prev-page">
+          <i class="fas fa-chevron-left"></i> Ant.
+        </a>
+        <a class="usa-button btn page-right" id="next-page">
+          Sig. <i class="fas fa-chevron-right"></i>
+        </a>
+        <span class="page-info">
+          Pág. <span id="page-num"></span> de <span id="page-count"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="pdf-bottom-bar d-flex justify-content-lg-between flex-column flex-lg-row"></div>
+</div>

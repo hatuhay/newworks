@@ -1,0 +1,28 @@
+uuid: 6b8bc4e5-c94f-4519-a0cc-81b490d20919
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.accordion.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: accordion
+label: Text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+    negate: 0
+  target_bundles_drag_drop:
+field_type: entity_reference_revisions

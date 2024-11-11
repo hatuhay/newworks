@@ -1,0 +1,13 @@
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    is_demo:
+      type: boolean
+      default: true
+    is_admin_page:
+      type: boolean
+      default: true
+    name:
+      type: string
+      default: ''

@@ -1,0 +1,21 @@
+uuid: c1d647ca-a069-4959-bcf4-c4be9752eedb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_medium
+    - paragraphs.paragraphs_type.row
+  module:
+    - options
+id: paragraph.row.field_layout_medium
+field_name: field_layout_medium
+entity_type: paragraph
+bundle: row
+label: 'Layout Medium'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

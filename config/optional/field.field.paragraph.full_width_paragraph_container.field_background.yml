@@ -1,0 +1,22 @@
+uuid: b330d5ce-2ece-400d-b37f-1e00dcb7a8e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.full_width_paragraph_container
+  module:
+    - color_field
+id: paragraph.full_width_paragraph_container.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: full_width_paragraph_container
+label: Background
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

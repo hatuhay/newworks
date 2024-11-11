@@ -1,0 +1,47 @@
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+# The human readable name.
+name: Gallery
+
+# Status can be: "experimental", "stable", "deprecated", "obsolete".
+status: experimental
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Wrapper attributes.
+    id:
+      type: string
+      title: id
+    thumbnail_style:
+      type: string
+      title: Thumbnail Style
+    items:
+      type: array
+      title: Items
+      item:
+        type: object
+        title: Item
+        properties:
+          image:
+            type: string
+            title: Image
+          alt:
+            type: string
+            title: Alt Text
+          uri:
+            type: string
+            title: URI
+libraryOverrides:
+  css:
+    component:
+      blueimp-gallery.min.css: { }
+  js:
+    blueimp-gallery.min.js: {}
+    gallery.js: {}

@@ -1,0 +1,20 @@
+{% set classes = [
+   'c-anchor',
+   'bg-secondary-lighter padding-1',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% if is_demo %}
+{% set is_admin_page = true %}
+{% set name = 'Test Anchor' %}
+{% endif %}
+
+{% if is_admin_page %}
+<div class="{{ classes }}">
+  <i class="fas fa-anchor"></i>
+  <strong>{{ name }}</strong>
+  <span>(<em><a id="{{ name|clean_id }}">#{{ name|clean_id }}</a></em>)</span>
+</div>
+{% else %}
+  <a class="visually-hidden" id="{{ name|clean_id }}"></a>
+{% endif %}
