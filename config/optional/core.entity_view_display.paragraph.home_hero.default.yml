@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.home_hero.field_background_image
+    - field.field.paragraph.home_hero.field_body
+    - field.field.paragraph.home_hero.field_link
     - field.field.paragraph.home_hero.field_title
     - paragraphs.paragraphs_type.home_hero
   module:
     - image
+    - link
+    - text
 id: paragraph.home_hero.default
 targetEntityType: paragraph
 bundle: home_hero
@@ -20,6 +24,25 @@ content:
       image_style: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_title:
     type: string
