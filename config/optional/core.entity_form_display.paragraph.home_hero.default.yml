@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.home_hero.field_background
+    - field.field.paragraph.home_hero.field_background_image
     - field.field.paragraph.home_hero.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.home_hero
@@ -14,9 +14,9 @@ targetEntityType: paragraph
 bundle: home_hero
 mode: default
 content:
-  field_background:
+  field_background_image:
     type: image_image
-    weight: 1
+    weight: 3
     region: content
     settings:
       progress_indicator: throbber

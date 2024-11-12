@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.home_hero.field_background
+    - field.field.paragraph.home_hero.field_background_image
     - field.field.paragraph.home_hero.field_title
     - paragraphs.paragraphs_type.home_hero
   module:
@@ -13,16 +13,13 @@ targetEntityType: paragraph
 bundle: home_hero
 mode: default
 content:
-  field_background:
-    type: image
-    label: above
+  field_background_image:
+    type: image_url
+    label: hidden
     settings:
-      image_link: ''
       image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
   field_title:
     type: string
