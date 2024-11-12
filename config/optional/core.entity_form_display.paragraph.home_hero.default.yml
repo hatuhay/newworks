@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.home_hero.field_background_image
+    - field.field.paragraph.home_hero.field_body
+    - field.field.paragraph.home_hero.field_link
     - field.field.paragraph.home_hero.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.home_hero
   module:
     - image
+    - link
+    - text
 id: paragraph.home_hero.default
 targetEntityType: paragraph
 bundle: home_hero
@@ -21,6 +25,22 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_title:
     type: string_textfield
