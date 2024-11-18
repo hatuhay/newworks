@@ -1,10 +1,12 @@
 uuid: 07f66404-e6c4-4f16-8129-bee6f378a5cd
-langcode: en
+langcode: es
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: AB6QrG2pjzDDREGmhWUfLsDpJNmKkAQyPbFkdDrCezU
 id: paragraph.field_layout_medium
 field_name: field_layout_medium
 entity_type: paragraph

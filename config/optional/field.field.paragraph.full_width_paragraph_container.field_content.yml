@@ -21,4 +21,4 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 1
-  field_type: entity_reference_revisions
+field_type: entity_reference_revisions

@@ -1,10 +1,12 @@
 uuid: af7bd580-32ac-4723-be25-606978e5935a
-langcode: en
+langcode: es
 status: true
 dependencies:
   module:
     - options
     - paragraphs
+_core:
+  default_config_hash: MAQkwFTmxOc0OUfRx4XuonLT2z1nElM8zTukAyLrtl0
 id: paragraph.field_layout_small
 field_name: field_layout_small
 entity_type: paragraph

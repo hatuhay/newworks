@@ -1,10 +1,12 @@
 uuid: f65f85ba-5487-4f36-a6ad-fef058bd22ce
-langcode: en
+langcode: es
 status: true
 dependencies:
   module:
     - color_field
     - paragraphs
+_core:
+  default_config_hash: YgzBCaqkyMQulMiiOVi22f7CdqrIBkHwSOYy4RRGKno
 id: paragraph.field_background
 field_name: field_background
 entity_type: paragraph

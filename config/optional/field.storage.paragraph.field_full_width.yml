@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - paragraphs
+_core:
+  default_config_hash: Fstvgtmc2JzIx7oxYR2pFa3LNC2egrkSw1DoLJfeAcc
 id: paragraph.field_full_width
 field_name: field_full_width
 entity_type: paragraph

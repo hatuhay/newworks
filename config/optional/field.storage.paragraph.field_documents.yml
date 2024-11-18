@@ -5,6 +5,8 @@ dependencies:
   module:
     - node
     - paragraphs
+_core:
+  default_config_hash: 29kx4MAlDgEat_XIRlZjCT9hY3WJ6bik9xVqppjqX1c
 id: paragraph.field_documents
 field_name: field_documents
 entity_type: paragraph
