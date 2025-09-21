@@ -1,0 +1,16 @@
+﻿<div class="videopopup-container">
+  {% if video is not empty %}
+    <a href="#" class="videopopup-trigger"
+      data-modal-id="{{ id }}"
+      data-image-alt="{{ image_alt }}"
+      data-video-src="{{ video }}"
+      data-video-type="{{ video_type }}">
+      <img src="{{ image }}" alt="{{ image_alt }}" class="img-fluid rounded-5">
+      <div class="video-play-overlay">
+        <img src="/themes/custom/ayarachis/components/videopopup/images/video.svg" alt="Play video" class="play-icon">
+      </div>
+    </a>
+  {% else %}
+    <img src="{{ image }}" alt="{{ image_alt }}" class="img-fluid rounded-5">
+  {% endif %}
+</div>

@@ -1,0 +1,27 @@
+# Credits: https://github.com/codyhouse/hero-slider/tree/master
+name: Video Popup
+description: A component that displays a video in a popup modal.
+category: Components
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the video popup.
+    title:
+      type: string
+    image:
+      type: string
+    image_alt:
+      type: string
+    video:
+      type: string
+    video_type:
+      type: string
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
+  js:
+    ./videopopup.js: {}

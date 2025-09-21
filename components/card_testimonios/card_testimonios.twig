@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-5">
+        {{ card_image }}
+      </div>
+      <div class="col-7">
+        <{{ title_tag|default('h5') }} class="card-title">{{ card_title }}</{{ title_tag|default('h5') }}>
+        <div class="card-cargo">{{ card_cargo | raw }}</div>
+      </div>
+    </div>
+    <div class="card-description">{{ card_body | raw }}</div>
+  </div>
+</div>

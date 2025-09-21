@@ -1,0 +1,71 @@
+{# Hero Slider Component #}
+{# This component is a slider that displays a series of slides with images, videos, and text. #}
+
+<section class="cd-hero js-cd-hero {% if autoplay %}js-cd-autoplay{% endif %}">
+  <ul class="cd-hero__slider">
+    {% for slide in slides %}
+      {% if slide.video %}
+        <li class="cd-hero__slide cd-hero__slide--video js-cd-slide{% if loop.first %} cd-hero__slide--selected{% endif %}">
+          <div class="cd-hero__content cd-hero__content--full-width">
+            <h1>{{ slide.title }}</h1>
+            {{ slide.body }}
+            {% if slide.primary_button %}
+              <a href="#paragraph-11" class="cd-hero__btn">{{ slide.primary_button.text }}</a>
+            {% endif %}
+          </div> <!-- .cd-hero__content -->
+
+          <div class="cd-hero__content cd-hero__content--bg-video js-cd-bg-video" data-video="{{ slide.video }}">
+            <!-- video element will be loaded using JavaScript -->
+          </div> <!-- .cd-hero__content -->
+        </li>
+      {% elseif slide.layout == 'full_width' %}
+        <li class="cd-hero__slide js-cd-slide{% if loop.first %} cd-hero__slide--selected{% endif %}" style="background-image: url('{{ slide.image }}');">
+          <div class="cd-hero__content cd-hero__content--full-width">
+            <h1>{{ slide.title }}</h1>
+            <p>{{ slide.body }}</p>
+
+            {% if slide.primary_button %}
+              <a href="{{ slide.primary_button.url }}" class="cd-hero__btn">{{ slide.primary_button.text }}</a>
+            {% endif %}
+
+          </div>
+        </li>
+      {% else %}
+        <li class="cd-hero__slide js-cd-slide{% if loop.first %} cd-hero__slide--selected{% endif %}">
+          {% if slide.image_position == 'left' and slide.image %}
+            <div class="cd-hero__content cd-hero__content--half-width cd-hero__content--img">
+					    <img src="{{ slide.image }}" alt="{{ slide.image_alt}}">
+				    </div> <!-- .cd-hero__content -->
+          {% endif %}
+
+            <h1>{{ slide.title }}</h1>
+            <p>{{ slide.body }}</p>
+
+            {% if slide.primary_button %}
+              <a href="{{ slide.primary_button.url }}" class="cd-hero__btn">{{ slide.primary_button.text }}</a>
+            {% endif %}
+
+          {% if slide.image_position == 'right' and slide.image %}
+            <div class="cd-hero__content cd-hero__content--half-width cd-hero__content--img">
+					    <img src="{{ slide.image }}" alt="{{ slide.image_alt}}">
+				    </div> <!-- .cd-hero__content -->
+          {% endif %}
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div class="cd-hero__nav js-cd-nav">
+    <nav>
+      <span class="cd-hero__marker cd-hero__marker--item-1 js-cd-marker"></span>
+
+      <ul>
+        {% for slide in slides %}
+          <li{% if loop.first %} class="cd-selected"{% endif %}>
+            <a href="#0">{{ slide.nav_title|default(loop.index) }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</section>

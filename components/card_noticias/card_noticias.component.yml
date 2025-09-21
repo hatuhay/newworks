@@ -1,0 +1,39 @@
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+# The human readable name.
+name: Card Image Top
+
+# Status can be: "experimental", "stable", "deprecated", "obsolete".
+status: stable
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  type: object
+  properties:
+    id:
+      type: string
+      title: ID
+    card_image:
+      type: string
+      title: Card Image
+    card_tag:
+      type: string
+      title: Card Tag
+    card_title:
+      type: string
+      title: Card Title
+    title_tag:
+      type: string
+      title: Title Tag
+      default: h5
+    card_body:
+      type: string
+      title: Card Body
+    card_date:
+      type: string
+      title: Card Date
+    card_link:
+      type: string
+      title: Card Link

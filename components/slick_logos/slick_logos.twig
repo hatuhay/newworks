@@ -1,0 +1,16 @@
+<div class="icon-slides">
+  {% for item in items %}
+    {%
+      set img = {
+        '#theme': 'image_style',
+        '#style_name': image_style,
+        '#uri': item.uri,
+        '#alt': item.alt,
+        '#class': 'img-responsive'
+      }
+    %}
+    <div>
+      {{ img }}
+    </div>
+  {% endfor %}
+</div>

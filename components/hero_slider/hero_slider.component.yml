@@ -1,0 +1,52 @@
+# Credits: https://github.com/codyhouse/hero-slider/tree/master
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    autoplay:
+      type: boolean
+      default: true
+    slides:
+      type: array
+      item:
+        type: object
+        properties:
+          title:
+            type: string
+          body:
+            type: string
+          layout:
+            type: string
+            enum: [full-width, split]
+            default: full-width
+          image_position:
+            type: string
+            enum: [left, right]
+            default: right
+          nav_title:
+            type: string
+          primary_button:
+            type: object
+            properties:
+              text:
+                type: string
+              url:
+                type: string
+          secondary_button:
+            type: object
+            properties:
+              text:
+                type: string
+              url:
+                type: string
+          image:
+            type: string
+          image_alt:
+            type: string
+          video:
+            type: string
+libraryOverrides:
+  js:
+    ./js/main.js: {}
+  css:
+    ./css/hero_slider.css: {}

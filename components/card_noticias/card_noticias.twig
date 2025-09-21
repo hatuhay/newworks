@@ -1,0 +1,10 @@
+<div class="card">
+  {{ card_image }}
+  <div class="card-body">
+    <{{ title_tag|default('h5') }} class="card-title">{{ card_title }}</{{ title_tag|default('h5') }}>
+    <p class="card-date">({{ card_date }})</p>
+  </div>
+  <div class="card-footer">
+    <a href="{{ card_link }}" class="card-link" target="_blank">Leer más</a>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+# Credits: https://github.com/codyhouse/hero-slider/tree/master
+name: Video
+description: A component that displays a video.
+category: Components
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the video popup.
+    video:
+      type: string
+    video_type:
+      type: string

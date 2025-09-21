@@ -1,0 +1,7 @@
+<div class="card card-image-top-overlay">
+  {{ card_image }}
+  <div class="card-body">
+    <{{ title_tag|default('h5') }} class="card-title">{{ card_title }}</{{ title_tag|default('h5') }}>
+    <div class="card-text">{{ card_body | raw }}</div>
+  </div>
+</div>

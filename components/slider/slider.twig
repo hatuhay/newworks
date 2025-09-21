@@ -1,0 +1,29 @@
+{# Hero Slider Component #}
+{# This component is a slider that displays a series of slides with images, videos, and text. #}
+
+<section class="slider-wrapper">
+  <h2>{{ title }}</h2>
+  <div class="slick-videos">
+    {% for slide in slides %}
+      <div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>{{ slide.title }}</h3>
+            {{ slide.body | raw }}
+            {% if slide.link %}
+              <a href="{{ slide.link.url }}" class="btn btn-primary">{{ slide.link.title }}</a>
+            {% endif %}
+          </div>
+          <div class="col-md-6">
+            {{ include('ayarachis:video',
+              { 'id': loop.index,
+                'video': slide.video,
+                'video_type': slide.video_type,
+              })
+            }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

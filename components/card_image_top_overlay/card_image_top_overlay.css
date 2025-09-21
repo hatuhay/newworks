@@ -1,0 +1,28 @@
+.card.card-image-top-overlay {
+  height: 400px;
+}
+.card-image-top-overlay .card-body {
+  transition: top 0.3s ease-in-out;
+}
+
+.card-image-top-overlay:hover .card-body {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bs-gray-200);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.card-image-top-overlay .card-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-image-top-overlay:hover .card-text {
+  display: block;
+  opacity: 1;
+}

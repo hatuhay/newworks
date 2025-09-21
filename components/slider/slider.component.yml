@@ -1,0 +1,25 @@
+# Credits: https://github.com/codyhouse/hero-slider/tree/master
+props:
+  type: object
+  additionalProperties: false
+  properties:
+    title:
+      type: string
+    slides:
+      type: array
+      item:
+        type: object
+        properties:
+          title:
+            type: string
+          body:
+            type: string
+          video:
+            type: string
+          video_type:
+            type: string
+libraryOverrides:
+  js:
+    ./js/slick-slider.js: {}
+  dependencies:
+    - ayarachis/slick
