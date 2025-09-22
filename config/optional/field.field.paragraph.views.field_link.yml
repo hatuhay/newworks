@@ -1,5 +1,5 @@
 uuid: 0a0c2c64-a492-43cd-b29b-c77e222124d1
-langcode: es
+langcode: en
 status: true
 dependencies:
   config:
@@ -14,7 +14,7 @@ bundle: views
 label: Link
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

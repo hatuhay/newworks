@@ -1,12 +1,10 @@
 uuid: 0bff3801-8001-4fe9-838f-30d85de41cf5
-langcode: es
+langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: W0GfCRYNLgLKcGXUbmUG7WhyZCAQV69Z-FRuTKyHHBo
 id: paragraph.field_layout_large
 field_name: field_layout_large
 entity_type: paragraph
@@ -14,16 +12,16 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: auto
+      value: col
       label: Auto
     -
-      value: 2_columns_equal
+      value: col-lg-6
       label: '2 Columns Equal'
     -
-      value: 3_columns_equal
+      value: col-lg-4
       label: '3 Columns Equal'
     -
-      value: 4_columns_equal
+      value: col-lg-3
       label: '4 Columns Equal'
   allowed_values_function: ''
 module: options

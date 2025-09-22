@@ -1,4 +1,3 @@
-uuid: 7932749a-55e2-4ff1-8ec0-7a2f681558e1
 langcode: en
 status: true
 dependencies:
@@ -12,6 +11,7 @@ dependencies:
   module:
     - color_field
     - paragraphs
+    - svg_image
 id: paragraph.full_width_paragraph_container.default
 targetEntityType: paragraph
 bundle: full_width_paragraph_container
@@ -22,7 +22,7 @@ content:
     weight: 1
     region: content
     settings:
-      default_colors: '#f0f3f8,#e5e5e5,#e0e5ef,#f0f0f0,#3cb4e5,#cfedf7,#9f8037,#8c6d24'
+      default_colors: '#f0f3f8,#e5e5e5,#e0e5ef,#f0f0f0,#3cb4e5,#cfedf7,#9f8037,#8c6d24,#d3ba7d,#fffaeb'
     third_party_settings: {  }
   field_background_image:
     type: image_image

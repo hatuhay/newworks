@@ -1,0 +1,21 @@
+uuid: acb98094-3102-41b1-8a4f-5720288dd93f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_position
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - options
+id: paragraph.hero_slide.field_image_position
+field_name: field_image_position
+entity_type: paragraph
+bundle: hero_slide
+label: 'Image Position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

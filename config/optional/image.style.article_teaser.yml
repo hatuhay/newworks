@@ -1,0 +1,21 @@
+uuid: 06dc94e2-e749-40fb-909d-d4021246eaf2
+langcode: en
+status: true
+dependencies: {  }
+name: article_teaser
+label: 'Article Teaser (600x400)'
+effects:
+  ade9f6d4-0266-4193-a940-d88466ccb5b6:
+    uuid: ade9f6d4-0266-4193-a940-d88466ccb5b6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 400
+      anchor: center-center
+  2dab7528-5d2a-47ca-a4b8-1af494d01d99:
+    uuid: 2dab7528-5d2a-47ca-a4b8-1af494d01d99
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

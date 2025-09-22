@@ -1,24 +1,34 @@
-uuid: fcca3618-58fc-4455-b414-024f28aac4c9
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.row.field_background
     - field.field.paragraph.row.field_colums
+    - field.field.paragraph.row.field_custom_css_class
+    - field.field.paragraph.row.field_full_width
     - field.field.paragraph.row.field_layout_large
     - field.field.paragraph.row.field_layout_medium
     - field.field.paragraph.row.field_layout_small
     - field.field.paragraph.row.field_title
     - paragraphs.paragraphs_type.row
   module:
+    - color_field
     - paragraphs
 id: paragraph.row.default
 targetEntityType: paragraph
 bundle: row
 mode: default
 content:
+  field_background:
+    type: color_field_widget_box
+    weight: 2
+    region: content
+    settings:
+      default_colors: '#f0f3f8,#e5e5e5,#e0e5ef,#f0f0f0,#3cb4e5,#cfedf7,#9f8037,#8c6d24,#d3ba7d,#fffaeb'
+    third_party_settings: {  }
   field_colums:
     type: paragraphs
-    weight: 1
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -34,21 +44,36 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_custom_css_class:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_full_width:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_layout_large:
     type: options_select
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_layout_medium:
     type: options_select
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_layout_small:
     type: options_select
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }

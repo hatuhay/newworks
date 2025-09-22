@@ -1,0 +1,10 @@
+uuid: 191ee7f2-05f5-4015-b2e4-c7f7ef325a2a
+langcode: en
+status: true
+dependencies: {  }
+id: operaciones
+label: Operaciones
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -12,7 +12,7 @@ third_party_settings:
   filefield_paths:
     enabled: true
     file_path:
-      value: '[date:custom:Y]-[date:custom:m]'
+      value: 'bg/[date:custom:Y]/[date:custom:m]'
       options:
         slashes: false
         pathauto: false
@@ -20,9 +20,9 @@ third_party_settings:
     file_name:
       value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
       options:
-        slashes: false
-        pathauto: false
-        transliterate: false
+        slashes: true
+        pathauto: true
+        transliterate: true
     redirect: false
     retroactive_update: false
     active_updating: false
@@ -33,7 +33,7 @@ bundle: full_width_paragraph_container
 label: 'Background Image'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

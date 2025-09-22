@@ -1,0 +1,10 @@
+uuid: 4ad1c563-ae50-445e-ba6f-c4af157c9e47
+langcode: en
+status: true
+dependencies: {  }
+id: icon_slick
+label: 'Icon Slick'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

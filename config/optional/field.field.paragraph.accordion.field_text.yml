@@ -24,5 +24,32 @@ settings:
     target_bundles:
       text: text
     negate: 0
-  target_bundles_drag_drop:
+    target_bundles_drag_drop:
+      accordion:
+        weight: 10
+        enabled: false
+      card:
+        weight: 11
+        enabled: false
+      full_width_paragraph_container:
+        weight: 12
+        enabled: false
+      gallery:
+        weight: 15
+        enabled: false
+      home_hero:
+        weight: 13
+        enabled: false
+      image:
+        weight: 14
+        enabled: false
+      row:
+        weight: 16
+        enabled: false
+      text:
+        weight: 17
+        enabled: true
+      views:
+        weight: 18
+        enabled: false
 field_type: entity_reference_revisions

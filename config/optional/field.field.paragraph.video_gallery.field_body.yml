@@ -1,0 +1,26 @@
+uuid: 4f607488-046f-4ea6-ae9b-39c311a02d32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.video_gallery
+  module:
+    - text
+id: paragraph.video_gallery.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: video_gallery
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

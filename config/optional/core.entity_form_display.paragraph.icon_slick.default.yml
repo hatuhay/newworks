@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_slick.field_image
+    - paragraphs.paragraphs_type.icon_slick
+id: paragraph.icon_slick.default
+targetEntityType: paragraph
+bundle: icon_slick
+mode: default
+content:
+  field_image:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,15 @@
+uuid: c8280fc7-d90a-4189-8821-1f76bf7767ab
+langcode: en
+status: true
+dependencies: {  }
+name: testimonios_teaser
+label: 'Testimonios Teaser (300 x 300)'
+effects:
+  1e6b192e-7d4c-41da-baf7-e09ad3b66cde:
+    uuid: 1e6b192e-7d4c-41da-baf7-e09ad3b66cde
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      anchor: center-center

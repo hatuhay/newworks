@@ -1,0 +1,26 @@
+uuid: b8454d75-7583-408a-9431-3e5dc63d40b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - text
+id: paragraph.hero_slide.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: hero_slide
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

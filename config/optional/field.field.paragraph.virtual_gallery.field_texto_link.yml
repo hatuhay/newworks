@@ -1,0 +1,19 @@
+uuid: 1c954165-6309-4fa5-9594-29e72f9b62bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_texto_link
+    - paragraphs.paragraphs_type.virtual_gallery
+id: paragraph.virtual_gallery.field_texto_link
+field_name: field_texto_link
+entity_type: paragraph
+bundle: virtual_gallery
+label: 'Texto link'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

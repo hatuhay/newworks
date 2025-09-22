@@ -1,0 +1,19 @@
+uuid: e488c482-ba7b-4a51-a72a-be1776501f99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.infraestructura
+id: paragraph.infraestructura.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: infraestructura
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

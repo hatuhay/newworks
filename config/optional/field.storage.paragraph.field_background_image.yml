@@ -6,8 +6,6 @@ dependencies:
     - file
     - image
     - paragraphs
-_core:
-  default_config_hash: uXylVCoTRjZB4a69QH_-SS4dKXONqWMyZmCOCaQHx4g
 id: paragraph.field_background_image
 field_name: field_background_image
 entity_type: paragraph
@@ -15,7 +13,7 @@ type: image
 settings:
   target_type: file
   display_field: false
-  display_default: false
+  display_default: true
   uri_scheme: public
   default_image:
     uuid: ''

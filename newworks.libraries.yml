@@ -1,6 +1,6 @@
 global-styling:
   version: VERSION
-  js: 
+  js:
     js/popper.min.js: { weight: -49 }
     js/bootstrap.min.js: { weight: -48 }
     js/barrio.js: {}
@@ -11,3 +11,20 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+news:
+  version: VERSION
+  js:
+    js/slick-news.js: {}
+  dependencies:
+    - core/jquery
+    - newworks/slick-slider
+slick-slider:
+  version: VERSION
+  js:
+    /libraries/slick/js/slick.min.js: { weight: -49 }
+  css:
+    component:
+      /libraries/slick/css/slick.css: {}
+      /libraries/slick/css/slick-theme.css: {}
+  dependencies:
+    - core/jquery

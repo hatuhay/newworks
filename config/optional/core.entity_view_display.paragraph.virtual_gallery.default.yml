@@ -1,0 +1,31 @@
+uuid: db41f031-f47e-4e69-b730-360776900dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.virtual_gallery.field_images
+    - field.field.paragraph.virtual_gallery.field_texto_link
+    - paragraphs.paragraphs_type.virtual_gallery
+id: paragraph.virtual_gallery.default
+targetEntityType: paragraph
+bundle: virtual_gallery
+mode: default
+content:
+  field_images:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_texto_link:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

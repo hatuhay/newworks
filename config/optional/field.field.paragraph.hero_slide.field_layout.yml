@@ -1,0 +1,23 @@
+uuid: 8281112e-bcf7-4f2f-8767-ff42574376f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - options
+id: paragraph.hero_slide.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: hero_slide
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: full_width
+default_value_callback: ''
+settings: {  }
+field_type: list_string

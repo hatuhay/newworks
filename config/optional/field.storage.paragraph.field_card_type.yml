@@ -1,0 +1,30 @@
+uuid: 4171da16-7ab2-4086-9072-2f11c94ee39b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_type
+field_name: field_card_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card_image_overlay
+      label: 'Card Image Overlay'
+    -
+      value: card_image_top
+      label: 'Card Image Top'
+    -
+      value: card_detail_popup
+      label: 'Card Detail Popup'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

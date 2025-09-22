@@ -11,8 +11,8 @@ entity_type: paragraph
 bundle: card
 label: Title
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

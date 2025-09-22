@@ -1,0 +1,23 @@
+uuid: 9886123d-4639-41bb-8662-a39bda28788e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_full_width
+    - paragraphs.paragraphs_type.slider
+id: paragraph.slider.field_full_width
+field_name: field_full_width
+entity_type: paragraph
+bundle: slider
+label: 'Full width'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

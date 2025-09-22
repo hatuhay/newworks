@@ -1,0 +1,10 @@
+uuid: 8f8618e1-13b1-4957-8182-d53b0318f0bd
+langcode: en
+status: true
+dependencies: {  }
+id: virtual_gallery
+label: 'Virtual Gallery'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

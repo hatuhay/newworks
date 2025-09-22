@@ -1,0 +1,26 @@
+uuid: 3633c7dc-afb5-45b3-a074-02edd1475727
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.text_and_video
+  module:
+    - text
+id: paragraph.text_and_video.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: text_and_video
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

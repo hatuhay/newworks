@@ -51,7 +51,13 @@
   } %}
 
     {% block content %}
-      <h1 class="text-white position-absolute top-50 start-50 translate-middle">{{ paragraph.field_title.value }}</h1>
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <h1>{{ paragraph.field_title.value }}</h1>
+        {{ paragraph.field_body.value | raw }}
+        {% if paragraph.field_link %}
+          <a href="{{paragraph.field_link.0.url}}" class="btn btn-primary">{{ paragraph.field_link.title }}</a>
+        {% endif %}
+      </div>
     {% endblock %}
 
   {% endembed %}

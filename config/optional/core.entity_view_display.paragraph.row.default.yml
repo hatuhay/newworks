@@ -3,13 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.row.field_background
     - field.field.paragraph.row.field_colums
+    - field.field.paragraph.row.field_custom_css_class
+    - field.field.paragraph.row.field_full_width
     - field.field.paragraph.row.field_layout_large
     - field.field.paragraph.row.field_layout_medium
     - field.field.paragraph.row.field_layout_small
     - field.field.paragraph.row.field_title
     - paragraphs.paragraphs_type.row
   module:
+    - color_field
     - entity_reference_revisions
     - options
 id: paragraph.row.default
@@ -17,42 +21,69 @@ targetEntityType: paragraph
 bundle: row
 mode: default
 content:
+  field_background:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_colums:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 1
+    region: content
+  field_custom_css_class:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_full_width:
+    type: boolean
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_layout_large:
     type: list_default
-    label: above
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_layout_medium:
+    type: list_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
-  field_layout_medium:
+  field_layout_small:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
-  field_layout_small:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden: {  }

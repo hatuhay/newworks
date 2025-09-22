@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_popup.field_image
+    - field.field.paragraph.video_popup.field_video
+    - paragraphs.paragraphs_type.video_popup
+  module:
+    - media_library
+id: paragraph.video_popup.default
+targetEntityType: paragraph
+bundle: video_popup
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_video:
+    type: media_library_widget
+    weight: 8
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

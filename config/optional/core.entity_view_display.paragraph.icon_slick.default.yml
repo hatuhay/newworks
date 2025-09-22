@@ -1,0 +1,22 @@
+uuid: c675047c-3022-47e8-842d-76e9139d01c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_slick.field_image
+    - paragraphs.paragraphs_type.icon_slick
+id: paragraph.icon_slick.default
+targetEntityType: paragraph
+bundle: icon_slick
+mode: default
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

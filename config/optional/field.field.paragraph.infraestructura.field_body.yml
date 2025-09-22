@@ -1,0 +1,26 @@
+uuid: bb9a3243-58c5-4bc8-89a6-be60f2339609
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.infraestructura
+  module:
+    - text
+id: paragraph.infraestructura.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: infraestructura
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

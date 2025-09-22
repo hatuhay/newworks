@@ -1,0 +1,35 @@
+uuid: b1031db6-2e3d-40c4-b41a-c026e1178d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_slider.field_autoplay
+    - field.field.paragraph.hero_slider.field_slides
+    - paragraphs.paragraphs_type.hero_slider
+  module:
+    - entity_reference_revisions
+id: paragraph.hero_slider.default
+targetEntityType: paragraph
+bundle: hero_slider
+mode: default
+content:
+  field_autoplay:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_slides:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

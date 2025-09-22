@@ -1,0 +1,23 @@
+uuid: b8037608-fc12-45f1-bdc0-230edc8d945e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autoplay
+    - paragraphs.paragraphs_type.hero_slider
+id: paragraph.hero_slider.field_autoplay
+field_name: field_autoplay
+entity_type: paragraph
+bundle: hero_slider
+label: Autoplay
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Autoplay
+  off_label: Manual
+field_type: boolean

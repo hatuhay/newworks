@@ -1,21 +1,31 @@
-uuid: be712de8-8db9-406d-9949-b2d3ef5227fd
-langcode: es
+uuid: 180d00eb-f880-4e94-b03a-bd1b7adec956
+langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.gallery.field_image
+    - field.field.paragraph.gallery.field_images
+    - field.field.paragraph.gallery.field_title
     - paragraphs.paragraphs_type.gallery
 id: paragraph.gallery.default
 targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
-  field_image:
+  field_images:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: galeria
+      view_mode: default
       link: false
+    third_party_settings: {  }
     weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

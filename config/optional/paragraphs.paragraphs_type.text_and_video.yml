@@ -1,0 +1,10 @@
+uuid: 8a940027-e030-49a4-abfd-f2a7da29087b
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_video
+label: 'Text and video'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

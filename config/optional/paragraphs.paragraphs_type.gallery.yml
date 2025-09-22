@@ -1,9 +1,9 @@
-uuid: c75d74db-bacc-4536-8537-1100261688be
-langcode: es
+uuid: ae9ff963-8c1f-4a76-8035-1596721fc190
+langcode: en
 status: true
 dependencies: {  }
 id: gallery
-label: 'Gallery'
+label: Gallery
 icon_uuid: null
 icon_default: null
 description: ''

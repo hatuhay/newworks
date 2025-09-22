@@ -1,9 +1,9 @@
-uuid: dfe89363-2ea6-45cd-9970-8d3a83f1b067
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.paragraph.views.field_link
+    - field.field.paragraph.views.field_title
     - field.field.paragraph.views.field_views
     - paragraphs.paragraphs_type.views
   module:
@@ -22,15 +22,24 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_views:
-    type: viewsreference_autocomplete
+  field_title:
+    type: string_textfield
     weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_views:
+    type: viewsreference_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

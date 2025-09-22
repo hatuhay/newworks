@@ -1,0 +1,10 @@
+uuid: 8a3afce4-a659-4f3f-b0e9-9ddf73ed0a87
+langcode: en
+status: true
+dependencies: {  }
+id: infraestructura
+label: Infraestructura
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

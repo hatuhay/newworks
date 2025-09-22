@@ -1,0 +1,10 @@
+uuid: 736d986e-e043-4836-b83c-6c211bd50fed
+langcode: en
+status: true
+dependencies: {  }
+id: video_popup
+label: 'Video Popup'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
