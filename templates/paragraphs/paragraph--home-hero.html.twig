@@ -40,7 +40,7 @@
 #}
 {% extends "@paragraphs/paragraph.html.twig" %}
 {% set hero_attributes = create_attribute() %}
-{% set background = file_url(paragraph.field_background.entity.uri.value) %}
+{% set background = file_url(content.field_background_image['#items'].entity.uri.value) %}
 
 {% block content %}
   {% embed 'bootstrap_barrio:container' with {
