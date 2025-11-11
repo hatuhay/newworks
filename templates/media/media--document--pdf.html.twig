@@ -56,7 +56,7 @@
 {% set modifier_classes = '' %}
 
 <div{{attributes}} >
-  {{ include('crl:pdf', {
+  {{ include('newworks:pdf', {
       title: media.field_titulo_del_documento.0.value,
       hide_title: hide_title,
       pdf_url: pdf_url,
