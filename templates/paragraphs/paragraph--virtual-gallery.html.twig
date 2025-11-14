@@ -66,7 +66,7 @@
 
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes).setAttribute('id', 'paragraph-' ~ paragraph.id()) }}>
-  {{ include('talma:virtual_gallery',
+  {{ include('newworks:virtual_gallery',
     { 'id': 'gallery-' ~ paragraph.id(),
       'images': images,
       'link_text': paragraph.field_texto_link.value,

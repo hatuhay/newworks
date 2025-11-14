@@ -59,7 +59,7 @@
       {% set items = items | merge([item]) %}
     {% endfor %}
 
-    {{ include('talma:gallery',
+    {{ include('newworks:gallery',
       { items: items,
         thumbnail_style: 'article_teaser'
       })

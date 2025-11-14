@@ -71,7 +71,7 @@
 <div{{ attributes.addClass(classes).setAttribute('id', 'paragraph-' ~ paragraph.id()) }}>
   <div class="bg-layer" style='background-color:{{content.field_background.0}};background-image:url({{ file_url(content.field_background_image['#items'].entity.uri.value) }});'>
     <div class="{{ paragraph.field_full_width.value ? 'container' }}">
-      {{ include('talma:slider',
+      {{ include('newworks:slider',
         { 'title': paragraph.field_title.value,
           'slides': slides
         })

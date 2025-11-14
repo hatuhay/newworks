@@ -49,7 +49,7 @@
 {% set video_type = paragraph.field_video.entity.field_media_video_file.entity.filemime.value %}
 {# {{ dump(video_type) }} #}
 <div{{ attributes.addClass(classes).setAttribute('id', 'paragraph-' ~ paragraph.id()) }}>
-  {{ include('talma:video',
+  {{ include('newworks:video',
     { 'id': paragraph.id.value,
       'video': video,
       'video_type': video_type,

@@ -36,7 +36,7 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('talma/slick-infraestructura') }}
+{{ attach_library('newworks/slick-infraestructura') }}
 {# The template default set classes. #}
 {%
   set classes = [
@@ -58,7 +58,7 @@
       {{ content.field_title }}
       <div class="row">
         <div class="col-md-6">
-          {{ include('talma:video',
+          {{ include('newworks:video',
             { 'id': 'video-' ~ paragraph.id.value,
               'video': video,
               'video_type': video_type,
@@ -82,7 +82,7 @@
           }
           %}
             <div class="slide-infraestructura">
-            {{ include('talma:card_image_top_overlay',
+            {{ include('newworks:card_image_top_overlay',
               { 'card_title': content.field_cards[key]['#paragraph'].field_title.value,
               'card_body': content.field_cards[key]['#paragraph'].field_body.value,
               'card_image': card_image,
