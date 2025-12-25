@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Template for PDF Flipbook component.
+ *
+ * Available variables:
+ * - pdf_url: URL to the PDF file
+ * - flipbook_id: Unique identifier for this flipbook instance
+ * - height: Height of the flipbook container
+ * - webgl: Enable WebGL 3D rendering
+ */
+#}
+<div class="pdf-flipbook-wrapper">
+  <div
+    class="_df_book pdf-flipbook"
+    id="{{ flipbook_id|default('flipbook-' ~ random()) }}"
+    source="{{ pdf_url }}"
+    data-height="{{ height|default(600) }}"
+    data-webgl="{{ webgl|default(true) ? 'true' : 'false' }}">
+  </div>
+</div>

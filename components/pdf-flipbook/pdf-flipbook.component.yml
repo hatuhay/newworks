@@ -1,0 +1,35 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/11.x/core/modules/sdc/src/metadata.schema.json
+name: PDF Flipbook
+status: stable
+description: 'Renders a PDF file as an interactive 3D flipbook using DearFlip library'
+props:
+  type: object
+  required:
+    - pdf_url
+  properties:
+    pdf_url:
+      type: string
+      title: PDF URL
+      description: 'The URL to the PDF file'
+    flipbook_id:
+      type: string
+      title: Flipbook ID
+      description: 'Unique ID for the flipbook instance'
+      default: 'flipbook'
+    height:
+      type: number
+      title: Height
+      description: 'Height of the flipbook container in pixels'
+      default: 600
+    webgl:
+      type: boolean
+      title: Enable WebGL
+      description: 'Enable 3D WebGL rendering'
+      default: true
+libraryOverrides:
+  css:
+    theme:
+      ./libraries/dearflip/dflip/css/dflip.min.css: {}
+      ./libraries/dearflip/dflip/css/themify-icons.min.css: {}
+  js:
+    ./libraries/dearflip/dflip/js/dflip.min.js: {preprocess: false}
