@@ -117,36 +117,315 @@ props:
 #### File Structure
 ```
 scss/
-├── style.scss        # Main entry point
+├── style.scss        # Main stylesheet (imports everything)
+├── import.scss       # Bootstrap import orchestration (CRITICAL)
 ├── variables.scss    # Bootstrap variable overrides
-├── mixins.scss       # Custom mixins
-├── typography.scss   # Typography styles
-└── import.scss       # Additional imports
+├── typography.scss   # Font and typography overrides
+└── mixins.scss       # Custom mixins
 ```
 
-#### Bootstrap Integration
-The theme uses Bootstrap 5 SASS source for customization:
-- Variables are overridden in `variables.scss`
-- Bootstrap is imported from `node_modules/bootstrap/scss`
-- PostCSS processes: autoprefixer, px-to-rem, inline-svg
+#### Understanding the Compilation Process
+
+The Gulpfile orchestrates a sophisticated build pipeline:
+
+**1. Source Processing (`gulpfile.js` → `styles` function)**
+```javascript
+// Gulp compiles TWO files in sequence:
+1. node_modules/bootstrap/scss/bootstrap.scss  // Full Bootstrap
+2. scss/style.scss                             // Your custom styles
+```
+
+**2. SASS Compilation**
+```javascript
+includePaths: [
+  './node_modules/bootstrap/scss',           // Bootstrap source
+  '../../contrib/bootstrap_barrio/scss'       // Barrio theme utilities
+]
+```
+
+**3. PostCSS Processing Pipeline**
+- **Inline SVG**: Embeds Bootstrap icons directly into CSS
+- **PX to REM**: Converts spacing/typography to rem units for accessibility
+  - Converts: `font`, `font-size`, `line-height`, `letter-spacing`, `margin`, `padding`
+  - Respects media queries
+- **Autoprefixer**: Adds vendor prefixes for browser compatibility
+
+**4. Output Generation**
+- `css/bootstrap.css` - Full Bootstrap framework (with your overrides)
+- `css/bootstrap.min.css` - Minified Bootstrap
+- `css/style.css` - Your custom styles
+- `css/style.min.css` - Minified custom styles
+- Source maps included for debugging
+
+#### Bootstrap Variable Override System
+
+**Critical Order in `import.scss`:**
+```scss
+// 1. FIRST: Bootstrap Functions (enables color manipulation)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. YOUR OVERRIDES HERE (before Bootstrap variables!)
+@import "variables";      // Your custom values
+@import "typography";     // Font overrides
+
+// 3. Bootstrap Variables (your overrides take precedence)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Bootstrap Maps & Mixins
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// 5. Rest of Bootstrap components...
+```
+
+**Why This Order Matters:**
+- Bootstrap `functions` must load first (provides `tint-color()`, `shade-color()`, etc.)
+- Your variables override Bootstrap's defaults
+- Bootstrap variables file reads your overrides
+- Maps and mixins use the finalized variable values
+
+#### Key Variable Overrides
+
+**Color System (`variables.scss`):**
+```scss
+// Step 1: Define your brand colors
+$primary-shade: rgb(255, 78, 46);    // Your main brand color
+$accent-shade: #0079C0;              // Your accent color
+
+// Step 2: Use Bootstrap color functions to create variations
+$primary-light: tint-color($primary-shade, 37%);  // Lighter version
+$primary-dark: shade-color($primary-shade, 12%);  // Darker version
+
+// Step 3: Map to Bootstrap's semantic color system
+$primary: $accent-shade;      // Bootstrap buttons, links, etc.
+$secondary: $primary-shade;   // Secondary UI elements
+$success: #28a745;            // Success states
+$info: #17a2b8;               // Info messages
+$warning: #ffc107;            // Warnings
+$danger: #dc3545;             // Errors/danger
+```
+
+**Common Variables to Override:**
+```scss
+// Theme Colors
+$primary: #your-color;
+$secondary: #your-color;
+$body-bg: #fff;
+$body-color: #333;
+
+// Links
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($primary, 15%);
+
+// Spacing (affects margins/paddings globally)
+$spacer: 1rem;  // Base spacing unit
+
+// Border Radius
+$border-radius: .375rem;
+$border-radius-sm: .25rem;
+$border-radius-lg: .5rem;
+
+// Shadows
+$enable-shadows: false;        // Set true for Bootstrap shadows
+$enable-gradients: false;      // Set true for gradient backgrounds
+
+// Responsive Fonts
+$enable-responsive-font-sizes: true;  // Scales fonts with viewport
+
+// Grid Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Container Max Widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+```
+
+#### Font Configuration
+
+**Typography Variables (`typography.scss`):**
+
+```scss
+// Import Google Fonts (uncomment and customize)
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700");
+
+// Define Font Stacks
+$font-lato: 'Lato', Arial, Verdana, sans-serif;
+$font-raleway: 'Raleway', Arial, Verdana, sans-serif;
+
+// Apply to Bootstrap Variables
+$font-family-sans-serif: $font-raleway;  // Used sitewide
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+// Base Font Sizes
+$font-size-base: 1rem;           // 16px default
+$font-size-lg: $font-size-base * 1.25;    // 20px
+$font-size-sm: $font-size-base * .875;    // 14px
+
+// Font Weights
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+// Line Heights
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+// Heading Sizes
+$h1-font-size: $font-size-base * 2.5;   // 40px
+$h2-font-size: $font-size-base * 2;     // 32px
+$h3-font-size: $font-size-base * 1.75;  // 28px
+$h4-font-size: $font-size-base * 1.5;   // 24px
+$h5-font-size: $font-size-base * 1.25;  // 20px
+$h6-font-size: $font-size-base;         // 16px
+```
+
+**Using Multiple Font Families:**
+```scss
+// In typography.scss, define multiple fonts
+$font-primary: 'Raleway', sans-serif;
+$font-secondary: 'Lato', sans-serif;
+$font-heading: 'Montserrat', sans-serif;
+
+// Override Bootstrap's font variables
+$font-family-sans-serif: $font-primary;
+$headings-font-family: $font-heading;
+
+// Or customize in style.scss
+body {
+  font-family: $font-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+}
+```
 
 #### Build Commands
+
 ```bash
 # Install dependencies
 npm install
 
-# Watch and compile SASS
+# Compile SASS once
+gulp styles
+
+# Watch for changes and auto-compile
 gulp watch
 
-# Build production CSS
-gulp styles
+# Full development server with BrowserSync
+gulp serve
+# Note: Update proxy in gulpfile.js to your local Drupal URL
+
+# Production build (generates minified CSS)
+gulp styles  # Automatically creates .min.css files
+```
+
+#### Advanced Customization
+
+**Adding Custom Bootstrap Modules:**
+```scss
+// In import.scss, uncomment/add specific Bootstrap components
+@import "../node_modules/bootstrap/scss/tooltips";
+@import "../node_modules/bootstrap/scss/popovers";
+// Only import what you need to reduce CSS size
+```
+
+**Creating Custom Utilities:**
+```scss
+// In style.scss, after imports
+.bg-brand {
+  background-color: $primary-shade !important;
+}
+
+.text-brand {
+  color: $primary-shade !important;
+}
+
+// Or extend Bootstrap's utility API in import.scss
+$utilities: map-merge(
+  $utilities,
+  (
+    "brand-color": (
+      property: color,
+      class: text-brand,
+      values: (
+        primary: $primary-shade,
+        accent: $accent-shade
+      )
+    )
+  )
+);
 ```
 
 #### SASS Best Practices
-- Override Bootstrap variables before importing Bootstrap
-- Use Bootstrap mixins and functions
-- Reference Barrio base theme SASS: `../../contrib/bootstrap_barrio/scss`
-- Utilize Bootstrap utility classes instead of custom CSS when possible
+
+1. **Always Override Variables Before Importing Bootstrap**
+   - Edit `variables.scss` and `typography.scss` first
+   - Never edit files in `node_modules/bootstrap/`
+
+2. **Use Bootstrap Functions**
+   ```scss
+   // Available after importing functions
+   tint-color($color, $weight)    // Lighten color
+   shade-color($color, $weight)   // Darken color
+   shift-color($color, $weight)   // Shift color
+   ```
+
+3. **Test Compilation Frequently**
+   - Run `gulp styles` after variable changes
+   - Check browser console for SASS errors
+   - Watch terminal output for compilation issues
+
+4. **Leverage Bootstrap Mixins**
+   ```scss
+   // Media query mixin
+   @include media-breakpoint-up(md) {
+     .custom-class { font-size: 1.5rem; }
+   }
+
+   // Responsive spacing
+   @include make-container();
+   ```
+
+5. **Keep Custom Styles in `style.scss`**
+   - `import.scss` is for Bootstrap orchestration only
+   - `style.scss` is for your custom CSS rules
+   - Component-specific styles go in `components/[name]/[name].css`
+
+#### Troubleshooting
+
+**SASS Won't Compile:**
+- Check `import.scss` variable order (functions → your vars → Bootstrap vars)
+- Ensure node_modules is installed: `npm install`
+- Verify Bootstrap version matches: `npm list bootstrap`
+
+**Styles Not Applying:**
+- Clear Drupal cache: `drush cr`
+- Hard refresh browser: Cmd+Shift+R (Mac) / Ctrl+Shift+R (Windows)
+- Check library definition in `newworks.libraries.yml`
+
+**Variable Override Not Working:**
+- Verify override is BEFORE Bootstrap variable import in `import.scss`
+- Check for `!default` flag (Bootstrap vars have it, yours shouldn't)
+- Ensure variable name exactly matches Bootstrap's variable name
 
 ### JavaScript Development
 
