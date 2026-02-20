@@ -1,0 +1,26 @@
+uuid: a2193e7c-6528-49ec-be15-50abd3a45fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_html
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.row
+  module:
+    - text
+id: paragraph.row.field_bottom_html
+field_name: field_bottom_html
+entity_type: paragraph
+bundle: row
+label: 'Bottom HTML'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+    - filtered_html
+field_type: text_long

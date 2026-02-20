@@ -59,39 +59,49 @@
 <div{{ attributes.addClass(classes).setAttribute('id', 'paragraph-' ~ paragraph.id()) }}>
   <div class="bg-layer" style='background-color:{{content.field_background.0}};background-image:url({{ file_url(content.field_background_image['#items'].entity.uri.value) }});'>
     <div class="{{ paragraph.field_full_width.value ? 'container' }}">
+      {% if paragraph.field_label.value %}
+        <p class="text-secondary fs-4"><strong>{{ paragraph.field_label.value }}</strong></p>
+      {% endif %}
       {% if paragraph.field_title.value %}
-        <h3>{{ content.field_title }}</h3>
+        {{ content.field_title }}
+      {% endif %}
+      {% if paragraph.field_body.value %}
+        {{ paragraph.field_body.value | raw }}
       {% endif %}
       <div class="row">
         {% for key,value in content.field_colums['#items'] %}
-          {% set paragraph_type = paragraph.field_colums[key].entity.bundle() %}
-            {% if paragraph_type == 'text' %}
-              <div class="{{ column_classes|join(' ') }}">
-                {{ paragraph.field_colums[key].entity.field_body.value|raw }}
-              </div>
-            {% else %}
-              {% set type = paragraph.field_colums[key].entity.field_card_type.value %}
-              {% set card_image = {
-                  '#theme': 'image_style',
-                  '#style_name': 'article_teaser',
-                  '#uri': paragraph.field_colums[key].entity.field_image.entity.field_media_image.entity.fileuri,
-                  '#alt': paragraph.field_colums[key].entity.field_image.entity.field_media_image.0.alt,
-                  '#attributes': {
-                    'class': ['card-img', (type ?: 'card_image_top')]
-                  }
-                }
-              %}
-              <div class="{{ column_classes|join(' ') }}">
-                {{ include('newworks:' ~ (type ?: 'card_image_top'),
-                  { 'card_title': paragraph.field_colums[key].entity.field_title.value,
-                  'card_body': paragraph.field_colums[key].entity.field_body.value,
-                  'card_image': card_image,
-                  })
-                }}
-              </div>
-            {% endif %}
+          {% set paragraph_type = paragraph.field_colums[key].entity ? paragraph.field_colums[key].entity.bundle() : paragraph.bundle %}
+
+          {% if paragraph_type == 'card' %}
+            {% set type = paragraph.field_colums[key].entity.field_card_type.value %}
+            {% set card_image = {
+              '#theme': 'image_style',
+              '#style_name': 'article_teaser',
+              '#uri': paragraph.field_colums[key].entity.field_image.entity.field_media_image.entity.fileuri ?? '',
+              '#alt': paragraph.field_colums[key].entity.field_image.entity.field_media_image.0.alt ?? '',
+              '#attributes': {
+                'class': ['card-img', (type ?: 'card_image_top')]
+              }
+            } %}
+            <div class="{{ column_classes|join(' ') }}">
+              {{ include('ikp_10:' ~ (type ?: 'card'),
+                { 'card_title': paragraph.field_colums[key].entity.field_title.value ?: '',
+                'card_body': paragraph.field_colums[key].entity.field_body.value ?: '',
+                'card_image': card_image,
+                })
+              }}
+            </div>
+          {% else %}
+            <div class="{{ column_classes|join(' ') }}">
+              {{ content.field_colums[key] }}
+            </div>
+          {% endif %}
+
         {% endfor %}
       </div>
+      {% if paragraph.field_bottom_html.value %}
+        {{ paragraph.field_bottom_html.value | raw }}
+      {% endif %}
     </div>
   </div>
 </div>
